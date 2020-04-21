@@ -9,27 +9,38 @@ namespace Lab_2_Exercise_VK_4_21_2020
     {
         static void Main(string[] args)
         {
-
-            float length = 1.5f;
-            float width = 1.5f; 
+            string runAgain = "yes";
+            float length;
+            float width;
+            float height; 
 
             Console.WriteLine("Welcome to the Grand Circus Classroom Detail Generator!");
-            Console.WriteLine("Enter Length");
-            Console.ReadLine();
+            while (runAgain == "yes")
+            {
+                runAgain = "no";
 
-            Console.WriteLine("Enter Width");
-            Console.ReadLine();
+                Console.WriteLine("Enter Length");
+                length = float.Parse(Console.ReadLine());
 
-            float floatnumber1 = 2*(length + width);
-            double perimeter = floatnumber1;
-            float floatnumber2 = (length * width);
-            double area = floatnumber2;
+                Console.WriteLine("Enter Width");
+                width = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Perimeter = " + perimeter);
+                Console.WriteLine("Enter Height");
+                height = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Area = " + area);
+                double perimeter = 2 * (length + width);
+                double area = (length * width);
+                double volume = (area * height);
 
-            Console.WriteLine("Continue?");
+                Console.WriteLine("Perimeter = " + perimeter);
+
+                Console.WriteLine("Area = " + area);
+
+                Console.WriteLine("Volume = " + volume);
+
+                Console.WriteLine("Continue - yes or no?");
+                runAgain = Console.ReadLine();
+            }
         }
     }
 
